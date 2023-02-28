@@ -11,4 +11,7 @@
 - Напишите sql-запросы на фильтрацию и сортировки в `filter_sorting.sql`
 - Напишите sql-запросы на фильтрацию по шаблону и группировки в `groupby.sql`
 
-> :warning: **If you are using mobile browser**: Be very careful here!
+> :warning: Писать и проверять запросы удобно в pgAdmin. Далее вставить в .sql файлы.
+
+> **Note**
+> Писать и проверять запросы удобно в pgAdmin. Далее вставить в .sql файлы.
