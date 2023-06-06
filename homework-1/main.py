@@ -5,7 +5,7 @@ from datetime import datetime
 """Скрипт для заполнения данными таблиц в БД Postgres."""
 
 
-# connect to db
+# подключение к Б/Д
 conn = psycopg2.connect(host='localhost', database='north', user='postgres', password='1989')
 try:
     with conn:
@@ -13,7 +13,7 @@ try:
             # Внесение данных из файла CSV в таблицу "customers"
             with open('north_data/customers_data.csv', 'r') as file:
                 reader = csv.reader(file)
-                next(reader)  # Пропустить заголовок
+                next(reader)
                 for row in reader:
                     cursor.execute(
                         "INSERT INTO customers (customer_id, company_name, contact_name) VALUES (%s, %s, %s)",
@@ -23,7 +23,7 @@ try:
             # Внесение данных из файла CSV в таблицу "employees"
             with open('north_data/employees_data.csv', 'r') as file:
                 reader = csv.reader(file)
-                next(reader)  # Пропустить заголовок
+                next(reader)
                 for row in reader:
                     birth_date = datetime.strptime(row[4], "%Y-%m-%d").date()
                     cursor.execute(
@@ -34,7 +34,7 @@ try:
             # Внесение данных из файла CSV в таблицу "orders"
             with open('north_data/orders_data.csv', 'r') as file:
                 reader = csv.reader(file)
-                next(reader)  # Пропустить заголовок
+                next(reader)
                 for row in reader:
                     order_date = datetime.strptime(row[3], "%Y-%m-%d").date()
                     cursor.execute(
